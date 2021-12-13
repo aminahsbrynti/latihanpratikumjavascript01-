@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KURS RUPIAH</title>
+</head>
+<body>
+    <h1>
+        kurs rupiah 
+    </h1>
+    <div>usdolar</div>
+    <input id="usdolar" type="number">
+    <hr/>
+    <div>IDR</div>
+    <input id="idr" type="number">
+    <script>
+      const factor = 14650;
+      
+      const usdolar = document.getElementById("usdolar")
+      const idr = document.getElementById("idr")
+
+      usdolar.addEventListener("input", function (ev){
+ const value = ev.currentTarget.value
+ const valueidr =value*factor
+ idr.value = valueidr
+})
+
+      idr.addEventListener("input", function (ev) {
+  const value = ev.currentTarget.value;
+  const valueusdolar = value / factor;
+  usdolar.value = valueusdolar;
+})
+    </script>
+</body>
+</html>
